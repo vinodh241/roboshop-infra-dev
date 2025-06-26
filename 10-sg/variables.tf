@@ -10,6 +10,6 @@ variable "frontend_sg_name" {
   
 }
 variable "frontend_sg_description" {
- default = "created sg for frontend instance's"
+ default = "created sg for frontend instances"
   
 }
