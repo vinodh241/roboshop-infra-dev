@@ -1,4 +1,4 @@
-output "azs_info" {
-  value = module.VPC.azs_info
+# output "azs_info" {
+#   value = module.VPC.azs_info
 
-}
+# }
