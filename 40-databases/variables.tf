@@ -1,10 +1,10 @@
 variable "project" {
-    default = "robosop"
-  
-}
+  default = "roboshop"
 
+}
 variable "environment" {
 
-    default = "dev"
-  
+  default = "dev"
+
 }
+
