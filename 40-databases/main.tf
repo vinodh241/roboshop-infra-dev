@@ -157,7 +157,7 @@ resource "terraform_data" "rabbitmq" {
 
 resource "aws_route53_record" "mongodb" {
   zone_id = var.zone_id
-  name    = "mongodb.${var.zone_name}"
+  name    = "mongodb-${var.environment}.${var.zone_name}" # mongodb-dev.daws84s.site
   type    = "A"
   ttl     = 1
   records = [aws_instance.mongodb.private_ip]
@@ -166,7 +166,7 @@ resource "aws_route53_record" "mongodb" {
 
 resource "aws_route53_record" "redis" {
   zone_id = var.zone_id
-  name    = "redis.${var.zone_name}"
+  name    = "redis-${var.environment}.${var.zone_name}" # redis-dev.daws84s.site
   type    = "A"
   ttl     = 1
   records = [aws_instance.redis.private_ip]
@@ -175,7 +175,7 @@ resource "aws_route53_record" "redis" {
 
 resource "aws_route53_record" "mysql" {
   zone_id = var.zone_id
-  name    = "mysql.${var.zone_name}"
+  name    = "mysql-${var.environment}.${var.zone_name}" # mysql-dev.daws84s.site
   type    = "A"
   ttl     = 1
   records = [aws_instance.mysql.private_ip]
@@ -184,7 +184,7 @@ resource "aws_route53_record" "mysql" {
 
 resource "aws_route53_record" "rabbitmq" {
   zone_id = var.zone_id
-  name    = "rabbitmq.${var.zone_name}"
+  name    = "rabbitmq-${var.environment}.${var.zone_name}" # rabbitmq-dev.daws84s.site
   type    = "A"
   ttl     = 1
   records = [aws_instance.rabbitmq.private_ip]
