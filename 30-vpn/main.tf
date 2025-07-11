@@ -22,3 +22,12 @@ user_data = file("openvpn.sh")
     }
   )
 }
+
+resource "aws_route53_record" "vpn" {
+  zone_id = var.zone_id
+  name    = "vpn-${var.environment}.${var.zone_name}" # vpn-dev.daws84s.site
+  type    = "A"
+  ttl     = 60
+  records = [aws_instance.vpn.public_ip]
+   allow_overwrite = true
+}
