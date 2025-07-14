@@ -851,6 +851,7 @@ module "vpn" {
     vpc_id = local.vpc_id
 }
 
+## SG RUles
 # MongoDB
 resource "aws_security_group_rule" "mongodb_vpn" {
   count = length(var.mongodb_ports_vpn)
